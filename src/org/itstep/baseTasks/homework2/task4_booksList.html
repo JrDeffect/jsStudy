@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>books</title>
+
+    <style>
+        .bookList ol {
+            cursor: pointer;
+        }
+
+        .selected {
+            color: orange;
+        }
+    </style>
+
+</head>
+<body>
+
+<ul class="bookList">
+    <ol>1. "JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan</ol>
+    <ol>2. "Eloquent JavaScript: A Modern Introduction to Programming" by Marijn Haversack</ol>
+    <ol>3. Eloquent JavaScript: A Modern Introduction to Programming («Выразительный Javascript»)</ol>
+    <ol>4. Beginning JavaScript («JavaScript. Основы»)</ol>
+    <ol>5. JavaScript: The Definitive Guide («JavaScript. Подробное руководство»)</ol>
+    <ol>6. Secrets of the JavaScript Ninja («Секреты JavaScript ниндзя»)</ol>
+    <ol>7. "You don't know JS" by Kyle Simpson</ol>
+</ul>
+
+<script>
+    let list = document.querySelectorAll('.bookList ol');
+
+    function setSelected() {
+        document.querySelectorAll('.bookList ol.selected').forEach(function (el) {
+            el.classList.remove('selected');
+        });
+        this.classList.add('selected');
+    }
+
+    list.forEach(function (ol) {
+        ol.onclick = setSelected;
+    });
+
+</script>
+
+
+</body>
+</html>
